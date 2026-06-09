@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Center for Digital Assets and Innovation (CDAI) | PolyU Faculty of Business</title>
+  <meta name="description" content="The Center for Digital Assets and Innovation (CDAI) at The Hong Kong Polytechnic University Faculty of Business — leading research and thought leadership in digital assets, FinTech, and financial innovation." />
+
+  <!-- ============================================================
+       FONTS — Premium academic typography
+       Headlines: 'Newsreader' (serif, editorial authority)
+       Body / UI: 'Inter' (clean, neutral sans)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+
+  <!-- TAILWIND CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- LUCIDE ICONS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- ============================================================
+       CUSTOM TAILWIND CONFIG
+       PolyU Burgundy + Tech Slate design tokens
+       ============================================================ -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Official PolyU Burgundy
+            polyu: {
+              DEFAULT: '#8A1538',
+              50:  '#FBF1F4',
+              100: '#F6E1E8',
+              200: '#EBC1CE',
+              300: '#DC97AC',
+              400: '#C75E7F',
+              500: '#A82B53',
+              600: '#8A1538', // primary
+              700: '#74122F',
+              800: '#5C0F26',
+              900: '#460B1D',
+            },
+            // Tech Slate accent
+            slate950: '#0F172A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
+          },
+          letterSpacing: {
+            'tightest': '-0.04em',
+          },
+          maxWidth: {
+            '8xl': '88rem',
+          },
+          backgroundImage: {
+            'grid-slate': "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
+          },
+          keyframes: {
+            'fade-up': {
+              '0%': { opacity: '0', transform: 'translateY(16px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            'fade-up': 'fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+    /* Animation utility with staggered delays */
+    .anim-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .anim-delay-2 { animation-delay: 0.25s; opacity: 0; }
+    .anim-delay-3 { animation-delay: 0.4s; opacity: 0; }
+    .anim-delay-4 { animation-delay: 0.55s; opacity: 0; }
+
+    /* Hero radial glow */
+    .hero-glow {
+      background:
+        radial-gradient(ellipse 80% 60% at 75% 20%, rgba(138, 21, 56, 0.35), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 10% 90%, rgba(30, 41, 59, 0.6), transparent 70%);
+    }
+  </style>
+</head>
+
+<body class="font-sans text-slate-900 bg-white antialiased">
+
+  <!-- ============================================================
+       INSTITUTIONAL HEADER
+       Tier 1: University utility bar (PolyU + language toggle)
+       Tier 2: Faculty / Center branding + primary navigation
+       ============================================================ -->
+  <header class="sticky top-0 z-50 w-full">
+
+    <!-- Tier 1 — University Utility Bar -->
+    <div class="bg-slate-950 text-slate-300 text-xs">
+      <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10">
+        <div class="flex h-9 items-center justify-between">
+
+          <!-- PolyU institutional wordmark -->
+          <a href="https://www.polyu.edu.hk" class="flex items-center gap-2 font-medium tracking-wide text-slate-200 hover:text-white transition-colors">
+            <span class="hidden sm:inline">The Hong Kong Polytechnic University</span>
+            <span class="sm:hidden">PolyU</span>
+            <span class="text-slate-600">·</span>
+            <span class="text-slate-400">Faculty of Business</span>
+          </a>
+
+          <!-- Utility links + language toggle -->
+          <div class="flex items-center gap-4">
+            <a href="#" class="hidden md:inline hover:text-white transition-colors">PolyU Home</a>
+            <a href="#" class="hidden md:inline hover:text-white transition-colors">Faculty of Business</a>
+            <span class="hidden md:inline text-slate-700">|</span>
+
+            <!-- Language Toggle (EN / 繁) -->
+            <div class="flex items-center rounded-full border border-slate-700 p-0.5 text-[11px] font-semibold">
+              <button class="rounded-full bg-polyu px-2.5 py-0.5 text-white transition-colors" aria-pressed="true">EN</button>
+              <button class="rounded-full px-2.5 py-0.5 text-slate-300 hover:text-white transition-colors" aria-pressed="false">繁</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 2 — Center Branding + Primary Navigation -->
+    <nav class="border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+      <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10">
+        <div class="flex h-20 items-center justify-between">
+
+          <!-- Logo lockup -->
+          <a href="#" class="flex items-center gap-3.5 group">
+            <!-- Emblem -->
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-polyu shadow-sm transition-transform group-hover:scale-105">
+              <i data-lucide="hexagon" class="h-6 w-6 text-white" stroke-width="2"></i>
+            </div>
+            <div class="leading-tight">
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-xl font-600 tracking-tight text-slate-950">CDAI</span>
+                <span class="hidden sm:inline text-[13px] font-medium text-slate-400">數字資產與創新中心</span>
+              </div>
+              <div class="text-[12px] font-medium tracking-wide text-slate-500">Center for Digital Assets &amp; Innovation</div>
+            </div>
+          </a>
+
+          <!-- Desktop navigation -->
+          <div class="hidden lg:flex items-center gap-1">
+            <a href="#about"    class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">About</a>
+            <a href="#research" class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">Research</a>
+            <a href="#people"   class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">People</a>
+            <a href="#events"   class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">Events</a>
+            <a href="#news"     class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">News</a>
+            <a href="#contact"  class="ml-2 inline-flex items-center gap-1.5 rounded-md bg-polyu px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-polyu-700 transition-colors">
+              Contact
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button id="mobileMenuBtn" class="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Open menu" aria-expanded="false">
+            <i data-lucide="menu" class="h-6 w-6"></i>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Mobile navigation drawer -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white">
+        <div class="mx-auto max-w-8xl px-4 py-3 space-y-1">
+          <a href="#about"    class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">About</a>
+          <a href="#research" class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">Research</a>
+          <a href="#people"   class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">People</a>
+          <a href="#events"   class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">Events</a>
+          <a href="#news"     class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">News</a>
+          <a href="#contact"  class="block rounded-md bg-polyu px-3 py-2.5 text-base font-semibold text-white text-center mt-2">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       HERO BANNER
+       Academic-tech hybrid: dark slate canvas, burgundy glow,
+       subtle technical grid, editorial serif headline.
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-slate-950 text-white">
+
+    <!-- Layered background: radial glow + technical grid -->
+    <div class="absolute inset-0 hero-glow"></div>
+    <div class="absolute inset-0 bg-grid-slate [background-size:56px_56px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]"></div>
+    <!-- Bottom fade into page -->
+    <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+
+    <div class="relative mx-auto max-w-8xl px-4 sm:px-6 lg:px-10">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center py-20 sm:py-28 lg:py-32">
+
+        <!-- Left: copy -->
+        <div class="lg:col-span-7">
+
+          <!-- Eyebrow -->
+          <div class="anim-delay-1 animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium tracking-wide text-polyu-200 backdrop-blur">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-polyu-400 opacity-75"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-polyu-400"></span>
+            </span>
+            PolyU Faculty of Business · Research Center
+          </div>
+
+          <!-- Headline -->
+          <h1 class="anim-delay-2 animate-fade-up mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl font-500 leading-[1.07] tracking-tightest text-white">
+            Leading the Future of
+            <span class="relative whitespace-nowrap">
+              <span class="bg-gradient-to-r from-polyu-300 via-polyu-400 to-rose-300 bg-clip-text text-transparent">Digital Assets</span>
+            </span>
+            and FinTech Innovation
+          </h1>
+
+          <!-- Subhead -->
+          <p class="anim-delay-3 animate-fade-up mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+            Advancing rigorous, world-class research at the intersection of blockchain,
+            tokenized finance, and digital economy policy — bridging academia, industry,
+            and regulators across Hong Kong and beyond.
+          </p>
+
+          <!-- CTAs -->
+          <div class="anim-delay-4 animate-fade-up mt-9 flex flex-col sm:flex-row gap-3.5">
+            <a href="#research" class="inline-flex items-center justify-center gap-2 rounded-lg bg-polyu px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-polyu-900/40 hover:bg-polyu-500 transition-colors">
+              Explore Our Research
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+            <a href="#about" class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur hover:bg-white/10 transition-colors">
+              <i data-lucide="play-circle" class="h-4 w-4"></i>
+              About the Center
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: stat / credibility panel -->
+        <div class="lg:col-span-5 anim-delay-3 animate-fade-up">
+          <div class="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 backdrop-blur-sm">
+            <div class="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-polyu-400/60 to-transparent"></div>
+
+            <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-slate-400">
+              <i data-lucide="bar-chart-3" class="h-4 w-4 text-polyu-400"></i>
+              Center at a Glance
+            </div>
+
+            <dl class="mt-6 grid grid-cols-2 gap-x-6 gap-y-7">
+              <div>
+                <dt class="text-3xl font-serif font-600 text-white">25+</dt>
+                <dd class="mt-1 text-sm text-slate-400">Research Fellows &amp; Affiliates</dd>
+              </div>
+              <div>
+                <dt class="text-3xl font-serif font-600 text-white">40+</dt>
+                <dd class="mt-1 text-sm text-slate-400">Peer-Reviewed Publications</dd>
+              </div>
+              <div>
+                <dt class="text-3xl font-serif font-600 text-white">12</dt>
+                <dd class="mt-1 text-sm text-slate-400">Active Research Streams</dd>
+              </div>
+              <div>
+                <dt class="text-3xl font-serif font-600 text-white">HK$30M+</dt>
+                <dd class="mt-1 text-sm text-slate-400">Funded Research &amp; Grants</dd>
+              </div>
+            </dl>
+
+            <div class="mt-7 flex items-center gap-3 border-t border-white/10 pt-5 text-sm text-slate-400">
+              <i data-lucide="shield-check" class="h-5 w-5 text-polyu-400 shrink-0"></i>
+              Endorsed by the PolyU Faculty of Business
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PLACEHOLDER SECTIONS — to be built in subsequent turns
+       ============================================================ -->
+
+  <!-- ============================================================
+       ABOUT SECTION
+       Two-column editorial layout: positioning narrative (left)
+       + Mission / Vision cards (right). Light, authoritative.
+       ============================================================ -->
+  <section id="about" class="scroll-mt-28 bg-white">
+    <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
+
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <!-- Left column: narrative -->
+        <div class="lg:col-span-7">
+          <!-- Section label -->
+          <div class="flex items-center gap-3">
+            <span class="h-px w-8 bg-polyu"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-polyu">About the Center</span>
+          </div>
+
+          <h2 class="mt-5 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-500 leading-[1.1] tracking-tight text-slate-950">
+            A premier academic think-tank for Hong Kong&rsquo;s digital asset economy
+          </h2>
+
+          <div class="mt-7 space-y-5 text-[17px] leading-relaxed text-slate-600">
+            <p>
+              Established under the <span class="font-medium text-slate-800">PolyU Faculty of Business</span>,
+              the Center for Digital Assets and Innovation (CDAI) is a dedicated research hub
+              examining the technological, economic, and regulatory forces reshaping global finance.
+              As Hong Kong consolidates its position as Asia&rsquo;s leading virtual asset hub in 2026,
+              CDAI provides the rigorous, independent scholarship needed to inform sound policy and
+              responsible market development.
+            </p>
+            <p>
+              Our work sits at the convergence of three defining movements of the decade: the
+              <span class="font-medium text-slate-800">tokenization of real-world assets (RWA)</span>,
+              the maturation of <span class="font-medium text-slate-800">Web3 infrastructure</span>, and
+              the emergence of regulated <span class="font-medium text-slate-800">stablecoins and the e-HKD</span>.
+              Bridging academia, industry, and regulators, the Center translates frontier research into
+              actionable insight for the Hong Kong Monetary Authority, the SFC, financial institutions,
+              and the broader FinTech ecosystem.
+            </p>
+            <p>
+              Grounded in PolyU&rsquo;s tradition of applied, impact-driven scholarship, CDAI convenes
+              economists, computer scientists, legal scholars, and practitioners to address the questions
+              that will define the next generation of capital markets.
+            </p>
+          </div>
+
+          <!-- Credibility strip -->
+          <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-slate-100 pt-7">
+            <div class="flex items-center gap-2.5 text-sm text-slate-500">
+              <i data-lucide="landmark" class="h-5 w-5 text-polyu"></i>
+              Policy &amp; regulatory engagement
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-500">
+              <i data-lucide="microscope" class="h-5 w-5 text-polyu"></i>
+              Peer-reviewed research
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-500">
+              <i data-lucide="handshake" class="h-5 w-5 text-polyu"></i>
+              Industry partnerships
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Mission & Vision cards -->
+        <div class="lg:col-span-5 space-y-6">
+
+          <!-- Mission -->
+          <div class="relative rounded-2xl border border-slate-200 bg-slate-50/60 p-7 sm:p-8 overflow-hidden">
+            <div class="absolute left-0 top-0 h-full w-1 bg-polyu"></div>
+            <div class="flex items-center gap-3">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-polyu/10">
+                <i data-lucide="target" class="h-6 w-6 text-polyu"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-600 text-slate-950">Our Mission</h3>
+            </div>
+            <p class="mt-5 text-[15px] leading-relaxed text-slate-600">
+              To advance world-class, evidence-based research on digital assets and financial
+              innovation — equipping policymakers, industry, and society with the knowledge to
+              build a transparent, resilient, and inclusive digital economy.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div class="relative rounded-2xl border border-slate-200 bg-slate-950 p-7 sm:p-8 overflow-hidden text-white">
+            <div class="absolute left-0 top-0 h-full w-1 bg-polyu-500"></div>
+            <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-polyu/20 blur-2xl"></div>
+            <div class="relative flex items-center gap-3">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10">
+                <i data-lucide="telescope" class="h-6 w-6 text-polyu-300"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-600 text-white">Our Vision</h3>
+            </div>
+            <p class="relative mt-5 text-[15px] leading-relaxed text-slate-300">
+              To be Asia&rsquo;s most trusted academic authority on the digital asset economy —
+              shaping the standards, scholarship, and talent that position Hong Kong at the
+              forefront of global FinTech innovation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH SECTION
+       Three core pillars in a responsive card grid.
+       ============================================================ -->
+  <section id="research" class="scroll-mt-28 bg-slate-50 border-y border-slate-100">
+    <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
+
+      <!-- Section header -->
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3">
+          <span class="h-px w-8 bg-polyu"></span>
+          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-polyu">Research Pillars</span>
+        </div>
+        <h2 class="mt-5 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-500 leading-[1.1] tracking-tight text-slate-950">
+          Three domains shaping the future of finance
+        </h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-slate-600">
+          Our research agenda is organized around three interconnected pillars — each addressing a
+          critical frontier in the transition toward a tokenized, decentralized, and digitally
+          regulated financial system.
+        </p>
+      </div>
+
+      <!-- Card grid -->
+      <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Pillar 1 -->
+        <article class="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 hover:border-polyu-200">
+          <div class="flex items-center justify-between">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-polyu/10 transition-colors group-hover:bg-polyu group-hover:text-white text-polyu">
+              <i data-lucide="coins" class="h-7 w-7"></i>
+            </div>
+            <span class="font-serif text-5xl font-500 text-slate-100 transition-colors group-hover:text-polyu-100">01</span>
+          </div>
+
+          <h3 class="mt-6 font-serif text-xl font-600 leading-snug text-slate-950">
+            Digital Assets &amp; Tokenization
+          </h3>
+          <p class="mt-1 text-sm font-semibold tracking-wide text-polyu">Real-World Assets (RWA)</p>
+
+          <p class="mt-4 flex-1 text-[15px] leading-relaxed text-slate-600">
+            Investigating the on-chain tokenization of bonds, funds, real estate, and private
+            credit — from valuation frameworks and market microstructure to settlement,
+            custody, and the institutional infrastructure underpinning a multi-trillion-dollar
+            asset class.
+          </p>
+
+          <ul class="mt-6 space-y-2.5 text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              Tokenized fixed income &amp; fund structures
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              On-chain settlement &amp; custody models
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              Liquidity &amp; secondary-market design
+            </li>
+          </ul>
+        </article>
+
+        <!-- Pillar 2 -->
+        <article class="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 hover:border-polyu-200">
+          <div class="flex items-center justify-between">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-polyu/10 transition-colors group-hover:bg-polyu group-hover:text-white text-polyu">
+              <i data-lucide="network" class="h-7 w-7"></i>
+            </div>
+            <span class="font-serif text-5xl font-500 text-slate-100 transition-colors group-hover:text-polyu-100">02</span>
+          </div>
+
+          <h3 class="mt-6 font-serif text-xl font-600 leading-snug text-slate-950">
+            Web3 &amp; Decentralized Finance
+          </h3>
+          <p class="mt-1 text-sm font-semibold tracking-wide text-polyu">DeFi &amp; On-Chain Markets</p>
+
+          <p class="mt-4 flex-1 text-[15px] leading-relaxed text-slate-600">
+            Examining the economics and governance of decentralized protocols — automated
+            market makers, lending markets, and DAOs — alongside the systemic risks, smart-contract
+            security, and incentive design that determine whether open finance can scale
+            responsibly.
+          </p>
+
+          <ul class="mt-6 space-y-2.5 text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              Protocol economics &amp; token incentives
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              Smart-contract risk &amp; security
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              Decentralized governance (DAOs)
+            </li>
+          </ul>
+        </article>
+
+        <!-- Pillar 3 -->
+        <article class="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 hover:border-polyu-200">
+          <div class="flex items-center justify-between">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-polyu/10 transition-colors group-hover:bg-polyu group-hover:text-white text-polyu">
+              <i data-lucide="shield-check" class="h-7 w-7"></i>
+            </div>
+            <span class="font-serif text-5xl font-500 text-slate-100 transition-colors group-hover:text-polyu-100">03</span>
+          </div>
+
+          <h3 class="mt-6 font-serif text-xl font-600 leading-snug text-slate-950">
+            RegTech &amp; Digital Currencies
+          </h3>
+          <p class="mt-1 text-sm font-semibold tracking-wide text-polyu">e-HKD &amp; Stablecoins</p>
+
+          <p class="mt-4 flex-1 text-[15px] leading-relaxed text-slate-600">
+            Studying the design and policy implications of central bank digital currencies and
+            regulated stablecoins — including the e-HKD pilot, Hong Kong&rsquo;s stablecoin
+            licensing regime, cross-border payments, and the RegTech tools enabling compliant,
+            programmable money.
+          </p>
+
+          <ul class="mt-6 space-y-2.5 text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              CBDC architecture &amp; e-HKD pilots
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              Stablecoin regulation &amp; reserves
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+              AML/CFT &amp; automated compliance
+            </li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PEOPLE SPOTLIGHT SECTION
+       Core leadership · portrait + biography cards
+       ============================================================ -->
+  <section id="people" class="scroll-mt-28 bg-slate-50 border-y border-slate-100">
+    <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
+
+      <!-- Section header -->
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3">
+          <span class="h-px w-8 bg-polyu"></span>
+          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-polyu">People Spotlight</span>
+        </div>
+        <h2 class="mt-5 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-500 leading-[1.1] tracking-tight text-slate-950">
+          Meet our core leadership
+        </h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-slate-600">
+          A distinguished team uniting academic rigour and industrial pragmatism to steer the
+          Centre&rsquo;s research, partnerships, and policy engagement.
+        </p>
+      </div>
+
+      <!-- Profile grid -->
+      <div class="mt-14 grid gap-8 lg:grid-cols-2">
+
+        <!-- ===== Profile One ===== -->
+        <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 sm:flex-row">
+          <!-- Portrait -->
+          <div class="relative shrink-0 overflow-hidden bg-slate-100 sm:w-56">
+            <div class="aspect-[3/4] sm:h-full">
+              <!-- MAP TO: katherine_feng_560x860.png -->
+              <img src="katherine_feng_560x860.png" alt="Prof. Yue Feng, Director of CDAI"
+                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="flex flex-col p-7 sm:p-8">
+            <h3 class="font-serif text-2xl font-600 text-slate-950">Prof. Yue Feng</h3>
+            <p class="mt-2 text-sm font-medium leading-relaxed text-polyu">
+              Director, Center for Digital Assets and Innovation<br />
+              Assistant Dean, Faculty of Business, PolyU<br />
+              Associate Professor, Department of Management and Marketing
+            </p>
+
+            <div class="my-5 h-px w-full bg-slate-100"></div>
+
+            <p class="text-[15px] leading-relaxed text-slate-600">
+              Serving as the Chief Academic Leader of CDAI, Prof. Feng&rsquo;s primary research focuses on the
+              deployment and implications of Generative AI (GenAI) across consumer behavior patterns, digital
+              marketing ecosystems, and emerging FinTech applications. Under her rigorous leadership, the Centre
+              aggressively advances blockchain infrastructure, regulatory compliance frameworks, and real-world
+              asset (RWA) tokenization. She spearheaded CDAI&rsquo;s foundational multi-party industry MOUs and
+              consistently advises on digital asset policy initiatives in Hong Kong.
+            </p>
+
+            <div class="mt-6 flex items-center gap-3">
+              <a href="#" aria-label="Email Prof. Yue Feng" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
+                <i data-lucide="mail" class="h-4 w-4"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
+                <i data-lucide="linkedin" class="h-4 w-4"></i>
+              </a>
+              <a href="#" aria-label="Academic profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
+                <i data-lucide="graduation-cap" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== Profile Two ===== -->
+        <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 sm:flex-row">
+          <!-- Portrait -->
+          <div class="relative shrink-0 overflow-hidden bg-slate-100 sm:w-56">
+            <div class="aspect-[3/4] sm:h-full">
+              <!-- MAP TO: Dan Tong Pic.jpg -->
+              <img src="Dan%20Tong%20Pic.jpg" alt="Prof. Dan Tang, Advisor of CDAI"
+                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="flex flex-col p-7 sm:p-8">
+            <h3 class="font-serif text-2xl font-600 text-slate-950">Prof. Dan Tang</h3>
+            <p class="mt-2 text-sm font-medium leading-relaxed text-polyu">
+              Advisor, Center for Digital Assets and Innovation<br />
+              Professor of Practice, Faculty of Business, PolyU
+            </p>
+
+            <div class="my-5 h-px w-full bg-slate-100"></div>
+
+            <p class="text-[15px] leading-relaxed text-slate-600">
+              Prof. Tang is a seasoned enterprise architect and pioneer in industrial blockchain scaling and
+              tokenized assets digitization, widely recognized as the founder of YatChain and Octopus Bot systems.
+              Bringing immense industrial pragmatism to the Centre, he steers applied research in tokenomics
+              optimization, decentralized scaling frameworks, and robust stablecoin liquidity infrastructure.
+              Prof. Tang aggressively champions academic knowledge transfer, frequently representing the Centre
+              across flagship global investment summits and regulatory sandbox initiatives.
+            </p>
+
+            <div class="mt-6 flex items-center gap-3">
+              <a href="#" aria-label="Email Prof. Dan Tang" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
+                <i data-lucide="mail" class="h-4 w-4"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
+                <i data-lucide="linkedin" class="h-4 w-4"></i>
+              </a>
+              <a href="#" aria-label="Company profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
+                <i data-lucide="building-2" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWS & EVENTS SECTION
+       Two-card responsive grid · editorial news layout
+       ============================================================ -->
+  <section id="events" class="scroll-mt-28"></section>
+  <section id="news" class="scroll-mt-28 bg-white">
+    <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
+
+      <!-- Section header -->
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3">
+            <span class="h-px w-8 bg-polyu"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-polyu">News &amp; Events</span>
+          </div>
+          <h2 class="mt-5 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-500 leading-[1.1] tracking-tight text-slate-950">
+            Latest from the Centre
+          </h2>
+          <p class="mt-5 text-[17px] leading-relaxed text-slate-600">
+            Milestones, forums, and industry engagements advancing Hong Kong&rsquo;s digital asset agenda.
+          </p>
+        </div>
+        <a href="#" class="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-polyu hover:text-polyu-700 transition-colors">
+          View all news
+          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+      </div>
+
+      <!-- Card grid -->
+      <div class="mt-14 grid gap-8 lg:grid-cols-2">
+
+        <!-- ===== Card One ===== -->
+        <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 hover:border-polyu-200">
+          <!-- Image -->
+          <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+            <!-- MAP TO: Building Pic.jpg -->
+            <img src="Building%20Pic.jpg" alt="Launch of the Centre for Digital Assets and Innovation at PolyU"
+                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-polyu px-3 py-1 text-xs font-semibold text-white shadow-sm">
+              Centre News
+            </span>
+          </div>
+
+          <!-- Body -->
+          <div class="flex flex-1 flex-col p-7 sm:p-8">
+            <!-- Meta -->
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500">
+              <span class="inline-flex items-center gap-1.5">
+                <i data-lucide="calendar" class="h-4 w-4 text-polyu"></i>
+                July 3, 2025
+              </span>
+              <span class="text-slate-300">|</span>
+              <span class="font-medium text-polyu">#Web3</span>
+              <span class="font-medium text-polyu">#RWA</span>
+            </div>
+
+            <h3 class="mt-4 font-serif text-xl font-600 leading-snug text-slate-950">
+              Launch of the Centre for Digital Assets and Innovation at PolyU Faculty of Business: Joining Hands with Industry to Explore Web3 Opportunities in Asia
+            </h3>
+
+            <p class="mt-4 text-[15px] leading-relaxed text-slate-600">
+              Officially established on June 30, 2025, the Centre hosted its inaugural forum
+              <span class="italic">&ldquo;Regulatory Innovation &amp; Asset Transformation: Asian Opportunities in the Web3 Era.&rdquo;</span>
+              The milestone event gathered leaders across governance, industry, and academia to deliberate on
+              Hong Kong&rsquo;s strategic position in stablecoin regulation, real-world asset (RWA) tokenization,
+              and Web3 infrastructure building.
+            </p>
+
+            <!-- Secondary image -->
+            <div class="mt-5 aspect-[16/7] overflow-hidden rounded-xl bg-slate-100">
+              <!-- MAP TO: Opening Speech.jpg -->
+              <img src="Opening%20Speech.jpg" alt="Opening speech at the inaugural CDAI forum"
+                   class="h-full w-full object-cover" />
+            </div>
+
+            <!-- Highlights -->
+            <ul class="mt-6 space-y-3 border-t border-slate-100 pt-6 text-sm text-slate-600">
+              <li class="flex items-start gap-3">
+                <i data-lucide="mic" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+                Keynotes by Mr. Joseph Chan, JP (Financial Services &amp; Treasury Bureau) and Dr. Johnny Ng (Legislative Council Member)
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="file-signature" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+                Strategic MOUs signed with RD Technologies, OSL, Fosun Wealth, HashKey Tokenisation, Asia Digital Asset Academy, and Asseto Fintech
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="banknote" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+                Secured HK$3.5M initial research endowment
+              </li>
+            </ul>
+
+            <a href="#" class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-polyu hover:gap-3 transition-all">
+              Read full story
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ===== Card Two ===== -->
+        <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 hover:border-polyu-200">
+          <!-- Image -->
+          <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+            <!-- MAP TO: Dan meeting Pic.jpg -->
+            <img src="Dan%20meeting%20Pic.jpg" alt="PolyU CDAI at the 2026 FINWISE AI Innovation and Investment Summit"
+                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-slate-950 px-3 py-1 text-xs font-semibold text-white shadow-sm">
+              Industry Engagement
+            </span>
+          </div>
+
+          <!-- Body -->
+          <div class="flex flex-1 flex-col p-7 sm:p-8">
+            <!-- Meta -->
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500">
+              <span class="inline-flex items-center gap-1.5">
+                <i data-lucide="calendar" class="h-4 w-4 text-polyu"></i>
+                May 7, 2026
+              </span>
+              <span class="text-slate-300">|</span>
+              <span class="font-medium text-polyu">#AI</span>
+              <span class="font-medium text-polyu">#Stablecoin</span>
+            </div>
+
+            <h3 class="mt-4 font-serif text-xl font-600 leading-snug text-slate-950">
+              PolyU CDAI Representatives Invited to Attend the 2026 FINWISE AI Innovation and Investment Summit
+            </h3>
+
+            <p class="mt-4 flex-1 text-[15px] leading-relaxed text-slate-600">
+              On April 22, 2026, Centre Advisor Professor David Tang was invited to attend the prestigious
+              <span class="italic">&ldquo;2026 FINWISE AI Innovation and Investment Summit&rdquo;</span>
+              held at the Renaissance Harbour View Hotel, Hong Kong. The summit gathered elite global minds to
+              tackle the convergence of artificial intelligence and Web3 decentralized protocols.
+            </p>
+
+            <!-- Highlights -->
+            <ul class="mt-6 space-y-3 border-t border-slate-100 pt-6 text-sm text-slate-600">
+              <li class="flex items-start gap-3">
+                <i data-lucide="users" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+                Prof. David Tang moderated the high-profile roundtable panel &ldquo;The Tipping Point of AI and Web3 Fusion&rdquo;
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="globe" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+                Engaged in deep strategic discussions alongside leaders from CertiK, ANOME, Harvard, Waterdrip Capital, and Gobi Partners
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="graduation-cap" class="mt-0.5 h-4 w-4 shrink-0 text-polyu"></i>
+                Focused on academic knowledge transfer into industrial Web3 applications
+              </li>
+            </ul>
+
+            <a href="#" class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-polyu hover:gap-3 transition-all">
+              Read full story
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+       Two-column: enquiry intro + contact details / inquiry form
+       Dark slate canvas with burgundy accents.
+       ============================================================ -->
+  <section id="contact" class="scroll-mt-28 relative overflow-hidden bg-slate-950 text-white">
+    <!-- Background flourishes -->
+    <div class="absolute inset-0 hero-glow opacity-70"></div>
+    <div class="absolute inset-0 bg-grid-slate [background-size:56px_56px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,black,transparent)]"></div>
+
+    <div class="relative mx-auto max-w-8xl px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <!-- Left: intro + contact details -->
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-3">
+            <span class="h-px w-8 bg-polyu-400"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-polyu-300">Get in Touch</span>
+          </div>
+          <h2 class="mt-5 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-500 leading-[1.1] tracking-tight text-white">
+            Collaborate with the Centre
+          </h2>
+          <p class="mt-5 text-[17px] leading-relaxed text-slate-300">
+            We welcome enquiries from researchers, industry partners, regulators, and prospective
+            students interested in advancing the digital asset agenda. Reach out to explore
+            partnerships, research collaboration, or speaking engagements.
+          </p>
+
+          <!-- Contact detail list -->
+          <dl class="mt-10 space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="map-pin" class="h-5 w-5 text-polyu-300"></i>
+              </div>
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Address</dt>
+                <dd class="mt-1 text-[15px] leading-relaxed text-slate-200">
+                  Faculty of Business, The Hong Kong Polytechnic University<br />
+                  Hung Hom, Kowloon, Hong Kong SAR
+                </dd>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="mail" class="h-5 w-5 text-polyu-300"></i>
+              </div>
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Email</dt>
+                <dd class="mt-1 text-[15px] text-slate-200">
+                  <a href="mailto:cdai@polyu.edu.hk" class="hover:text-white transition-colors">cdai@polyu.edu.hk</a>
+                </dd>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="phone" class="h-5 w-5 text-polyu-300"></i>
+              </div>
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Telephone</dt>
+                <dd class="mt-1 text-[15px] text-slate-200">
+                  <a href="tel:+85227661234" class="hover:text-white transition-colors">+852 2766 1234</a>
+                </dd>
+              </div>
+            </div>
+          </dl>
+
+          <!-- Social links -->
+          <div class="mt-10 flex items-center gap-3">
+            <a href="#" aria-label="LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-slate-300 hover:border-polyu-400 hover:text-white transition-colors">
+              <i data-lucide="linkedin" class="h-4 w-4"></i>
+            </a>
+            <a href="#" aria-label="X / Twitter" class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-slate-300 hover:border-polyu-400 hover:text-white transition-colors">
+              <i data-lucide="twitter" class="h-4 w-4"></i>
+            </a>
+            <a href="#" aria-label="YouTube" class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-slate-300 hover:border-polyu-400 hover:text-white transition-colors">
+              <i data-lucide="youtube" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: enquiry form -->
+        <div class="lg:col-span-7">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-7 sm:p-9 backdrop-blur-sm">
+            <h3 class="font-serif text-2xl font-600 text-white">Send us an enquiry</h3>
+            <p class="mt-2 text-sm text-slate-400">Complete the form below and our team will respond within two business days.</p>
+
+            <form class="mt-8 grid gap-5 sm:grid-cols-2" onsubmit="return false;">
+              <div>
+                <label for="firstName" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">First Name</label>
+                <input type="text" id="firstName" name="firstName" autocomplete="given-name"
+                       class="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-polyu-400 focus:outline-none focus:ring-1 focus:ring-polyu-400 transition-colors"
+                       placeholder="Jane" />
+              </div>
+              <div>
+                <label for="lastName" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">Last Name</label>
+                <input type="text" id="lastName" name="lastName" autocomplete="family-name"
+                       class="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-polyu-400 focus:outline-none focus:ring-1 focus:ring-polyu-400 transition-colors"
+                       placeholder="Chan" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">Email Address</label>
+                <input type="email" id="email" name="email" autocomplete="email"
+                       class="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-polyu-400 focus:outline-none focus:ring-1 focus:ring-polyu-400 transition-colors"
+                       placeholder="jane.chan@example.com" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="subject" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">Area of Interest</label>
+                <select id="subject" name="subject"
+                        class="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-polyu-400 focus:outline-none focus:ring-1 focus:ring-polyu-400 transition-colors">
+                  <option class="bg-slate-900">Research Collaboration</option>
+                  <option class="bg-slate-900">Industry Partnership &amp; MOU</option>
+                  <option class="bg-slate-900">Speaking Engagement</option>
+                  <option class="bg-slate-900">Media &amp; Press Enquiry</option>
+                  <option class="bg-slate-900">Student / Academic Programme</option>
+                  <option class="bg-slate-900">General Enquiry</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">Message</label>
+                <textarea id="message" name="message" rows="4"
+                          class="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-polyu-400 focus:outline-none focus:ring-1 focus:ring-polyu-400 transition-colors resize-none"
+                          placeholder="Tell us about your enquiry…"></textarea>
+              </div>
+              <div class="sm:col-span-2">
+                <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-polyu px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-polyu-900/40 hover:bg-polyu-500 transition-colors sm:w-auto">
+                  Submit Enquiry
+                  <i data-lucide="send" class="h-4 w-4"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Institutional PolyU footer with navigation + legal bar
+       ============================================================ -->
+  <footer class="bg-slate-950 border-t border-white/10 text-slate-400">
+    <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10">
+
+      <!-- Upper footer -->
+      <div class="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-12">
+
+        <!-- Brand lockup -->
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-3.5">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-polyu">
+              <i data-lucide="hexagon" class="h-6 w-6 text-white" stroke-width="2"></i>
+            </div>
+            <div class="leading-tight">
+              <div class="font-serif text-xl font-600 tracking-tight text-white">CDAI</div>
+              <div class="text-[12px] font-medium tracking-wide text-slate-500">數字資產與創新中心</div>
+            </div>
+          </div>
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">
+            The Center for Digital Assets and Innovation advances world-class research at the
+            intersection of blockchain, tokenized finance, and digital economy policy under the
+            PolyU Faculty of Business.
+          </p>
+        </div>
+
+        <!-- Explore -->
+        <div class="lg:col-span-2">
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white">Explore</h4>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="#about"    class="hover:text-white transition-colors">About</a></li>
+            <li><a href="#research" class="hover:text-white transition-colors">Research</a></li>
+            <li><a href="#people"   class="hover:text-white transition-colors">People</a></li>
+            <li><a href="#news"     class="hover:text-white transition-colors">News &amp; Events</a></li>
+            <li><a href="#contact"  class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Research pillars -->
+        <div class="lg:col-span-3">
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white">Research Pillars</h4>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="#research" class="hover:text-white transition-colors">Digital Assets &amp; Tokenization (RWA)</a></li>
+            <li><a href="#research" class="hover:text-white transition-colors">Web3 &amp; Decentralized Finance (DeFi)</a></li>
+            <li><a href="#research" class="hover:text-white transition-colors">RegTech &amp; Digital Currencies</a></li>
+          </ul>
+        </div>
+
+        <!-- University links -->
+        <div class="lg:col-span-3">
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white">University</h4>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="https://www.polyu.edu.hk" class="inline-flex items-center gap-1.5 hover:text-white transition-colors">PolyU Home <i data-lucide="external-link" class="h-3.5 w-3.5"></i></a></li>
+            <li><a href="https://www.polyu.edu.hk/fb/" class="inline-flex items-center gap-1.5 hover:text-white transition-colors">Faculty of Business <i data-lucide="external-link" class="h-3.5 w-3.5"></i></a></li>
+            <li><a href="https://www.polyu.edu.hk/mm/" class="inline-flex items-center gap-1.5 hover:text-white transition-colors">Dept. of Management &amp; Marketing <i data-lucide="external-link" class="h-3.5 w-3.5"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal bar -->
+      <div class="flex flex-col gap-4 border-t border-white/10 py-7 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-slate-500">
+          &copy; 2026 The Hong Kong Polytechnic University. Center for Digital Assets and Innovation. All rights reserved.
+        </p>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs">
+          <a href="#" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="text-slate-500 hover:text-white transition-colors">Terms of Use</a>
+          <a href="#" class="text-slate-500 hover:text-white transition-colors">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+    // Close mobile menu when a link is tapped
+    menu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+
+</body>
+</html>
