@@ -156,7 +156,6 @@
           <div class="hidden lg:flex items-center gap-1">
             <a href="#about"    class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">About</a>
             <a href="#research" class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">Research</a>
-            <a href="#people"   class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">People</a>
             <a href="#events"   class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">Events</a>
             <a href="#news"     class="rounded-md px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-polyu hover:bg-polyu-50 transition-colors">News</a>
             <a href="#contact"  class="ml-2 inline-flex items-center gap-1.5 rounded-md bg-polyu px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-polyu-700 transition-colors">
@@ -178,7 +177,6 @@
         <div class="mx-auto max-w-8xl px-4 py-3 space-y-1">
           <a href="#about"    class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">About</a>
           <a href="#research" class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">Research</a>
-          <a href="#people"   class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">People</a>
           <a href="#events"   class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">Events</a>
           <a href="#news"     class="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-polyu-50 hover:text-polyu transition-colors">News</a>
           <a href="#contact"  class="block rounded-md bg-polyu px-3 py-2.5 text-base font-semibold text-white text-center mt-2">Contact</a>
@@ -531,122 +529,40 @@
         </article>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ============================================================
-       PEOPLE SPOTLIGHT SECTION
-       Core leadership · portrait + biography cards
-       ============================================================ -->
-  <section id="people" class="scroll-mt-28 bg-slate-50 border-y border-slate-100">
-    <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
-
-      <!-- Section header -->
-      <div class="max-w-3xl">
-        <div class="flex items-center gap-3">
-          <span class="h-px w-8 bg-polyu"></span>
-          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-polyu">People Spotlight</span>
+      <!-- Featured publication / download -->
+      <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
+        <div class="grid items-center gap-8 p-8 sm:p-10 lg:grid-cols-12">
+          <div class="lg:col-span-8">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-polyu px-3 py-1 text-xs font-semibold text-white">
+                <i data-lucide="file-text" class="h-3.5 w-3.5"></i>
+                Featured Report
+              </span>
+              <span class="text-xs font-medium uppercase tracking-wider text-slate-400">White Paper · 中文</span>
+            </div>
+            <h3 class="mt-4 font-serif text-2xl font-600 leading-snug text-white">
+              數字經濟的流動性樞紐 · Liquidity Hubs of the Digital Economy
+            </h3>
+            <p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-slate-300">
+              A flagship research report examining how tokenized assets, stablecoins, and on-chain
+              settlement infrastructure are reshaping liquidity formation across the digital economy.
+              Download the full document for our complete analysis and policy perspectives.
+            </p>
+          </div>
+          <div class="lg:col-span-4 lg:justify-self-end">
+            <a href="数字经济的流动性枢纽-纯白背景.pdf" target="_blank" rel="noopener" download
+               class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-polyu px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-polyu-900/40 hover:bg-polyu-500 transition-colors sm:w-auto lg:w-full">
+              <i data-lucide="download" class="h-4 w-4"></i>
+              Download PDF
+            </a>
+            <p class="mt-3 text-center text-xs text-slate-500 lg:text-right">PDF · approx. 4.8 MB</p>
+          </div>
         </div>
-        <h2 class="mt-5 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-500 leading-[1.1] tracking-tight text-slate-950">
-          Meet our core leadership
-        </h2>
-        <p class="mt-5 text-[17px] leading-relaxed text-slate-600">
-          A distinguished team uniting academic rigour and industrial pragmatism to steer the
-          Centre&rsquo;s research, partnerships, and policy engagement.
-        </p>
-      </div>
-
-      <!-- Profile grid -->
-      <div class="mt-14 grid gap-8 lg:grid-cols-2">
-
-        <!-- ===== Profile One ===== -->
-        <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 sm:flex-row">
-          <!-- Portrait -->
-          <div class="relative shrink-0 overflow-hidden bg-slate-100 aspect-[3/4] sm:aspect-auto sm:w-72">
-            <!-- MAP TO: katherine_feng_560x860.png -->
-            <img src="katherine_feng_560x860.png" alt="Prof. Yue Feng, Director of CDAI"
-                 class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
-          </div>
-
-          <!-- Bio -->
-          <div class="flex flex-col p-7 sm:p-8">
-            <h3 class="font-serif text-2xl font-600 text-slate-950">Prof. Yue Feng</h3>
-            <p class="mt-2 text-sm font-medium leading-relaxed text-polyu">
-              Director, Center for Digital Assets and Innovation<br />
-              Assistant Dean, Faculty of Business, PolyU<br />
-              Associate Professor, Department of Management and Marketing
-            </p>
-
-            <div class="my-5 h-px w-full bg-slate-100"></div>
-
-            <p class="text-[15px] leading-relaxed text-slate-600">
-              Serving as the Chief Academic Leader of CDAI, Prof. Feng&rsquo;s primary research focuses on the
-              deployment and implications of Generative AI (GenAI) across consumer behavior patterns, digital
-              marketing ecosystems, and emerging FinTech applications. Under her rigorous leadership, the Centre
-              aggressively advances blockchain infrastructure, regulatory compliance frameworks, and real-world
-              asset (RWA) tokenization. She spearheaded CDAI&rsquo;s foundational multi-party industry MOUs and
-              consistently advises on digital asset policy initiatives in Hong Kong.
-            </p>
-
-            <div class="mt-6 flex items-center gap-3">
-              <a href="#" aria-label="Email Prof. Yue Feng" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
-                <i data-lucide="mail" class="h-4 w-4"></i>
-              </a>
-              <a href="#" aria-label="LinkedIn profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
-                <i data-lucide="linkedin" class="h-4 w-4"></i>
-              </a>
-              <a href="#" aria-label="Academic profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
-                <i data-lucide="graduation-cap" class="h-4 w-4"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- ===== Profile Two ===== -->
-        <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 sm:flex-row">
-          <!-- Portrait -->
-          <div class="relative shrink-0 overflow-hidden bg-slate-100 aspect-[3/4] sm:aspect-auto sm:w-72">
-            <!-- MAP TO: Dan Tong Pic.jpg -->
-            <img src="Dan%20Tong%20Pic.jpg" alt="Prof. Dan Tang, Advisor of CDAI"
-                 class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-          </div>
-
-          <!-- Bio -->
-          <div class="flex flex-col p-7 sm:p-8">
-            <h3 class="font-serif text-2xl font-600 text-slate-950">Prof. Dan Tang</h3>
-            <p class="mt-2 text-sm font-medium leading-relaxed text-polyu">
-              Advisor, Center for Digital Assets and Innovation<br />
-              Professor of Practice, Faculty of Business, PolyU
-            </p>
-
-            <div class="my-5 h-px w-full bg-slate-100"></div>
-
-            <p class="text-[15px] leading-relaxed text-slate-600">
-              Prof. Tang is a seasoned enterprise architect and pioneer in industrial blockchain scaling and
-              tokenized assets digitization, widely recognized as the founder of YatChain and Octopus Bot systems.
-              Bringing immense industrial pragmatism to the Centre, he steers applied research in tokenomics
-              optimization, decentralized scaling frameworks, and robust stablecoin liquidity infrastructure.
-              Prof. Tang aggressively champions academic knowledge transfer, frequently representing the Centre
-              across flagship global investment summits and regulatory sandbox initiatives.
-            </p>
-
-            <div class="mt-6 flex items-center gap-3">
-              <a href="#" aria-label="Email Prof. Dan Tang" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
-                <i data-lucide="mail" class="h-4 w-4"></i>
-              </a>
-              <a href="#" aria-label="LinkedIn profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
-                <i data-lucide="linkedin" class="h-4 w-4"></i>
-              </a>
-              <a href="#" aria-label="Company profile" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:border-polyu hover:text-polyu transition-colors">
-                <i data-lucide="building-2" class="h-4 w-4"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
       </div>
     </div>
   </section>
+
 
   <!-- ============================================================
        NEWS & EVENTS SECTION
@@ -982,7 +898,6 @@
           <ul class="mt-4 space-y-3 text-sm">
             <li><a href="#about"    class="hover:text-white transition-colors">About</a></li>
             <li><a href="#research" class="hover:text-white transition-colors">Research</a></li>
-            <li><a href="#people"   class="hover:text-white transition-colors">People</a></li>
             <li><a href="#news"     class="hover:text-white transition-colors">News &amp; Events</a></li>
             <li><a href="#contact"  class="hover:text-white transition-colors">Contact</a></li>
           </ul>
